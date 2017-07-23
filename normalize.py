@@ -14,6 +14,7 @@ from stop_words import get_stop_words
 from nltk.stem.porter import PorterStemmer
 from gensim import corpora, models
 import gensim
+import numpy as np
 
 # Function to get LDA
 def getlda(doc_a):
@@ -76,6 +77,7 @@ def getlda(doc_a):
 
 # Open Files to read and write.
 input = open("Level1-2.csv", 'rb')
+file = open("Results.txt","w") 
 d = defaultdict(list)
 
 # List to store the all soundex codes in the file
@@ -157,10 +159,10 @@ for i in xrange(1,1+noOfClusters):
 	noOfItemsInCluster = len(d[i])
 	for loop7 in xrange(0,noOfItemsInCluster):
 		if loop7 == 0:
-			print "Names in cluster number ",i,"are:",
+			print "\n\nNames in cluster number ",i,"is/are:"
 		xy = d[i][loop7].split("+")
-		print "[ID:",xy[0],"] ",xy[1]," ",
-	print 
+		print "[ID:",xy[0],"] ",xy[1]," "
+	#print 
 	print "Number of items in cluster number ",i,"is",noOfItemsInCluster
 	# List to store cluster ids
 	id = []
@@ -281,10 +283,10 @@ for i in xrange(1,1+noOfClusters):
 						for loop4 in xrange (1,len(CoAuthorList2Array)):
 							if CoAuthorList1Array[loop3] == CoAuthorList2Array[loop4]:
 								flagCoauthor = flagCoauthor + 1
-								print "Descrption Keyword Match"," ","[ID:",id[loop1],"]","[ID:",id[loop2],"]:",CoAuthorList1Array[loop3]
+								#print "Coauthor Match"," ","[ID:",id[loop1],"]","[ID:",id[loop2],"]:",CoAuthorList1Array[loop3]
 					if flagCoauthor > 0:
 						Matrix[loop2][loop1] = Matrix[loop2][loop1] + 0.3
-						Matrix[loop2][loop1] = Matrix[loop2][loop1] + 0.3
+						Matrix[loop1][loop2] = Matrix[loop1][loop2] + 0.3
 
 		input.close()
 		
@@ -344,9 +346,9 @@ for i in xrange(1,1+noOfClusters):
 						for loop4 in xrange (0,len(ldaWords2)):
 							if ldaWords1[loop3] == ldaWords2[loop4]:
 								flagLda = flagLda + 1
-								print "Descrption Keyword Match"," ","[ID:",id[loop1],"]","[ID:",id[loop2],"]:",ldaWords1[loop3]
+								#print "Descrption Keyword Match"," ","[ID:",id[loop1],"]","[ID:",id[loop2],"]:",ldaWords1[loop3]
 					if flagLda > 0:
-						print "Number of matches",flagLda
+						#print "Number of matches",flagLda
 						Matrix[loop1][loop2] = Matrix[loop1][loop2] + 0.3
 						Matrix[loop2][loop1] = Matrix[loop2][loop1] + 0.3
 
@@ -401,11 +403,11 @@ for i in xrange(1,1+noOfClusters):
 						for loop4 in xrange (0,len(ldaWords2)):
 							if ldaWords1[loop3] == ldaWords2[loop4]:
 								flaglda = flaglda + 1
-								print "Abstract Keyword Match"," ","[ID:",id[loop1],"]","[ID:",id[loop2],"]:",ldaWords1[loop3]
+								#print "Abstract Keyword Match"," ","[ID:",id[loop1],"]","[ID:",id[loop2],"]:",ldaWords1[loop3]
 					if flaglda > 0:
-						print "Number of matches",flaglda
+						#print "Number of matches",flaglda
 						Matrix[loop1][loop2] = Matrix[loop1][loop2] + 0.3
-						Matrix[loop2][loop1] = Matrix[loop1][loop2] + 0.3
+						Matrix[loop2][loop1] = Matrix[loop2][loop1] + 0.3
 
 		input.close()
 		
@@ -452,7 +454,9 @@ for i in xrange(1,1+noOfClusters):
 						Matrix[loop2][loop1] = Matrix[loop2][loop1] + 0.1
 		input.close()
 
-	# Printing out probability measures of the corresponding to each author pair
+	MatrixCopy = Matrix
+	#print "Normalized names"
+	"""
 	for loop1 in xrange(0,noOfItemsInCluster):
 		if noOfItemsInCluster == 1:
 			print "Only[ID:",id[loop1],"]",authorNames[loop1]," is present"
@@ -471,3 +475,42 @@ for i in xrange(1,1+noOfClusters):
 			if flag == 0 :
 				print " No possible grouping found",
 			print ""
+	"""
+	print "Normalized Names"
+	d1=[]
+	for loop1 in xrange(0,noOfItemsInCluster):
+		if noOfItemsInCluster == 1:
+			print "[ID:",id[loop1],"]",authorNames[loop1]
+			break
+		else:
+			flag = 0
+			flagVal = 0
+			flagVal2 = 0 
+			for loop2 in xrange(0,noOfItemsInCluster):
+				if MatrixCopy[loop1][loop2] > 0 and MatrixCopy[loop1][loop2] <= 1.0 and loop1!=loop2:
+					if flag == 0:
+						if loop1 not in d1:
+							str1 = "[ID:"+id[loop1]+"] "+authorNames[loop1]+" "
+							#print str1,
+							file.write(str1)
+							d1.append(loop1)
+							flag = 1
+					if loop2 not in d1:
+						str2 = "[ID:"+id[loop2]+"] "+authorNames[loop2]+" "#" [",Matrix[loop1][loop2],"] ",
+						#print str2,
+						file.write(str2)
+						flagVal = 1
+						MatrixCopy[loop2][loop1] = 5.0
+						d1.append(loop2)
+			if flagVal ==1:
+				file.write("\n")
+			if flagVal == 0:
+				for loop3 in  xrange(0,noOfItemsInCluster):
+					if MatrixCopy[loop1][loop3] == 5.0:
+						flagVal2 = 1
+				if flagVal2 == 0 and loop1 not in d1:
+					str3 = "[ID:"+id[loop1]+"] "+authorNames[loop1]
+					#print str3
+					file.write(str3)
+					file.write("\n")
+					d1.append(loop1)

@@ -1,0 +1,70 @@
+[ID:15442] R. Sotirov
+[ID:16457] A.I. Sotiropoulos
+[ID:4705] W. Sweet
+[ID:26542] A.A. Sweet
+[ID:6071] M. Satyanarayanan
+[ID:10897] P. Satyanarayana
+[ID:2712] C.G. Sodini [ID:2795] C.G. Sodini [ID:6920] C.G. Sodini [ID:8770] C.G. Sodini [ID:24352] C.G. Sodini 
+[ID:2614] M. Shtaif [ID:3237] M. Shtaif 
+[ID:1096] J.G. Seidel [ID:14166] J. Seidel [ID:23992] J. Seidel 
+[ID:17310] H. Seidel
+[ID:13244] S.K. Sitaraman [ID:17098] S.K. Sitaraman 
+[ID:326] D. Sutanto [ID:16276] D. Sutanto 
+[ID:11690] H. Sutanto
+[ID:11764] M.R. Siddiqui
+[ID:23622] A.S. Siddiqui
+[ID:6002] M. Shahidehpour
+[ID:9326] M. Shahidehpour [ID:26374] M. Shahidehpour 
+[ID:7630] J. Sottile [ID:12245] J. Sottile 
+[ID:1303] G.A. Sadowy
+[ID:26945] J.S. Sadowsky
+[ID:10790] George Sethares
+[ID:12197] L. Shterengas
+[ID:18607] T. Seta
+[ID:19600] S.Y. Set
+[ID:465] M. Sato [ID:11225] M. Sato [ID:20119] M. Sato 
+[ID:2686] K. Sato [ID:5565] K. Sato [ID:11711] K. Sato [ID:14698] K. Sato [ID:22975] K. Sato [ID:25624] K. Sato 
+[ID:4756] N. Sato
+[ID:8093] Y. Sato
+[ID:11160] Y. Sato
+[ID:28842] K. Sato 
+[ID:11913] G. Sato
+[ID:13498] T. Sato [ID:21483] T. Sato 
+[ID:18723] L.M. Sato
+[ID:20468] G. Sato
+[ID:20759] H. Sato
+[ID:1315] Hideo Saito [ID:5485] Hideo Saito [ID:25113] H. Saito 
+[ID:2692] T. Saito [ID:6231] T. Saito [ID:29047] T. Saito 
+[ID:2786] S. Saito [ID:25093] S. Saito 
+[ID:7463] H. Saito [ID:25573] Hiroshi Saito 
+[ID:15104] M. Saito [ID:18097] M. Saito 
+[ID:24332] N. Saito
+[ID:670] K. Saitoh [ID:17393] K. Saitoh [ID:22130] K. Saitoh 
+[ID:900] Y. Saitoh [ID:5116] Y. Saitoh 
+[ID:22841] M. Saitoh
+[ID:893] H. Satoh
+[ID:7976] S. Satoh
+[ID:8702] A. Satoh
+[ID:24758] K. Satoh
+[ID:1920] A.M. Sayeed
+[ID:8747] A.H. Sayed
+[ID:14718] U. Saeed
+[ID:3713] D.K. Sadana
+[ID:24348] N.G. Sadaka
+[ID:79] L. Soder
+[ID:26230] J.E. Sader
+[ID:11710] S. Sudo
+[ID:16236] S.D. Sudhoff
+[ID:6570] R. Shioda
+[ID:14517] S. Shida
+[ID:23144] G.G. Shahidi [ID:28311] G.G. Shahidi 
+[ID:4794] J. Sawada
+[ID:17954] Y. Sawada
+[ID:8800] H. Saaied
+[ID:26110] O. Saaid
+[ID:16545] W.R. Sutherland
+[ID:20310] M.E. Sutherland
+[ID:2971] J. J. Suter
+[ID:7752] M. Suter
+[ID:23663] D. Suter
+[ID:25178] B.W. Suter [ID:27506] B.W. Suter 
